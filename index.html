@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Computer Vision & Image Processing — Predicted Semester Paper</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#f6f8fb; --card:#ffffff; --muted:#6b7280; --accent:#0f172a; --primary:#0b5cff;
+      --glass: rgba(255,255,255,0.6);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+      margin:0;background:linear-gradient(180deg, #eef2ff 0%, var(--bg) 100%);color:var(--accent);
+      -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;padding:24px;
+    }
+    .container{max-width:100%;margin:0 auto;padding:0 12px;}
+
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:18px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,#0b5cff,#6dd3ff);display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
+    h1{font-size:18px;margin:0}
+    .meta{color:var(--muted);font-size:13px}
+
+    .controls{display:flex;gap:8px}
+    .btn{background:var(--primary);color:white;padding:10px 12px;border-radius:10px;border:0;font-weight:600;cursor:pointer}
+    .btn.ghost{background:transparent;color:var(--primary);border:1px solid rgba(11,92,255,0.16)}
+
+    .paper{background:var(--card);border-radius:14px;padding:20px;box-shadow:0 6px 20px rgba(15,23,42,0.06)}
+    .section{margin-bottom:18px}
+
+    .part-a, .part-b{display:grid;grid-template-columns:1fr;gap:12px}
+
+    .qblock{background:linear-gradient(180deg, rgba(11,92,255,0.03), rgba(11,92,255,0.01));padding:12px;border-radius:10px;border:1px solid rgba(11,92,255,0.04)}
+    .qtitle{display:flex;align-items:center;justify-content:space-between}
+    .qtitle h3{margin:0;font-size:15px}
+    .qtext{margin-top:10px;color:var(--muted);font-size:14px;line-height:1.5}
+
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    @media (max-width:720px){.grid-2{grid-template-columns:1fr}}
+
+    footer{display:flex;justify-content:space-between;align-items:center;margin-top:18px;color:var(--muted);font-size:13px}
+
+    /* collapsible styles */
+    .unit-header{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .unit-title{font-weight:600}
+    .toggle{background:transparent;border:0;color:var(--primary);font-weight:600;cursor:pointer}
+
+    /* print */
+    @media print{body{padding:0;background:white} .controls, header, footer{display:none} .paper{box-shadow:none;border-radius:0}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">CV</div>
+        <div>
+          <h1>Computer Vision & Image Processing — Predicted Semester Paper</h1>
+          <div class="meta">Time: 3 Hours</div>
+        </div>
+      </div>
+      <div class="controls">
+        <button class="btn ghost" id="toggleAllBtn">Collapse All</button>
+      </div>
+    </header>
+
+    <main class="paper" id="paper">
+      <section class="section">
+        <div class="qtitle"><h3>Instructions</h3><div class="meta">Answer ALL in Part–A. Choose ONE question from each unit in Part–B. Show neat diagrams where necessary.</div></div>
+      </section>
+
+      <section class="section part-a">
+        <div class="qblock">
+          <div class="qtitle"><h3>PART – A </h3><div class="meta">Answer ALL</div></div>
+          <div class="qtext grid-2" style="margin-top:12px">
+            <div>
+              <strong>UNIT – I</strong>
+              <ol style="padding-left:20px;margin:8px 0;color:var(--accent)">
+                <li>Define sampling and quantization.</li>
+                <li>Write the 2D DFT formula and explain each term.</li>
+              </ol>
+            </div>
+            <div>
+              <strong>UNIT – II</strong>
+              <ol style="padding-left:20px;margin:8px 0;color:var(--accent)">
+                <li>What is the Canny edge detector?</li>
+                <li>Define erosion and dilation with set notation.</li>
+              </ol>
+            </div>
+
+            <div>
+              <strong>UNIT – III</strong>
+              <ol style="padding-left:20px;margin:8px 0;color:var(--accent)">
+                <li>Define disparity and write its relation with depth.</li>
+                <li>What is epipolar geometry?</li>
+              </ol>
+            </div>
+            <div>
+              <strong>UNIT – IV</strong>
+              <ol style="padding-left:20px;margin:8px 0;color:var(--accent)">
+                <li>Mention any two differences between SIFT and SURF.</li>
+                <li>What is the purpose of a convolutional layer in CNNs?</li>
+              </ol>
+            </div>
+
+            <div>
+              <strong>UNIT – V</strong>
+              <ol style="padding-left:20px;margin:8px 0;color:var(--accent)">
+                <li>Distinguish between lossy and lossless compression.</li>
+                <li>Name two applications of morphological image operations.</li>
+              </ol>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="section part-b">
+        <div class="qblock" id="unit1">
+          <div class="unit-header">
+            <div>
+              <div class="unit-title">UNIT – I (Answer ANY ONE)</div>
+              <div class="meta"></div>
+            </div>
+            <button class="toggle" data-target="u1">Toggle</button>
+          </div>
+          <div class="qtext" id="u1">
+            <strong>Q1 a)</strong> Explain image acquisition methods with diagrams. <br>
+            <strong>b)</strong> Discuss sampling, quantization, and the effect of bit-depth on image quality. 
+            <hr>
+            <strong>OR</strong>
+            <p style="margin-top:8px"><strong>Q2 a)</strong> Explain point operations: brightness, contrast, log transform, and gamma correction with formulas. <br>
+            <strong>b)</strong> Explain histogram equalization and histogram specification using the CDF. </p>
+          </div>
+        </div>
+
+        <div class="qblock" id="unit2">
+          <div class="unit-header">
+            <div>
+              <div class="unit-title">UNIT – II (Answer ANY ONE)</div>
+              <div class="meta"></div>
+            </div>
+            <button class="toggle" data-target="u2">Toggle</button>
+          </div>
+          <div class="qtext" id="u2">
+            <strong>Q3 a)</strong> Explain Sobel and Prewitt operators. Show how gradients are approximated. <br>
+            <strong>b)</strong> Describe erosion, dilation, opening, and closing with examples. 
+            <hr>
+            <strong>OR</strong>
+            <p style="margin-top:8px"><strong>Q4 a)</strong> Explain thresholding, region-growing, and clustering-based segmentation. <br>
+            <strong>b)</strong> Explain texture analysis using GLCM and Gabor filters. </p>
+          </div>
+        </div>
+
+        <div class="qblock" id="unit3">
+          <div class="unit-header">
+            <div>
+              <div class="unit-title">UNIT – III (Answer ANY ONE)</div>
+              <div class="meta"></div>
+            </div>
+            <button class="toggle" data-target="u3">Toggle</button>
+          </div>
+          <div class="qtext" id="u3">
+            <strong>Q5 a)</strong> Explain epipolar geometry with neat diagram. <br>
+            <strong>b)</strong> Derive depth estimation formula using disparity. 
+            <hr>
+            <strong>OR</strong>
+            <p style="margin-top:8px"><strong>Q6 a)</strong> Explain Structure from Motion (SfM) pipeline — feature tracking and 3D reconstruction. <br>
+            <strong>b)</strong> Explain Lucas–Kanade and Horn–Schunck optical flow methods. </p>
+          </div>
+        </div>
+
+        <div class="qblock" id="unit4">
+          <div class="unit-header">
+            <div>
+              <div class="unit-title">UNIT – IV (Answer ANY ONE)</div>
+              <div class="meta"></div>
+            </div>
+            <button class="toggle" data-target="u4">Toggle</button>
+          </div>
+          <div class="qtext" id="u4">
+            <strong>Q7 a)</strong> Explain SIFT and SURF feature extraction pipelines. <br>
+            <strong>b)</strong> Explain deformable part model (DPM) and CNN-based object detection. 
+            <hr>
+            <strong>OR</strong>
+            <p style="margin-top:8px"><strong>Q8 a)</strong> Explain SVM, Decision Trees, and Random Forests for image classification. <br>
+            <strong>b)</strong> Describe Autoencoders, RNNs, and GAN architecture with objectives. </p>
+          </div>
+        </div>
+
+        <div class="qblock" id="unit5">
+          <div class="unit-header">
+            <div>
+              <div class="unit-title">UNIT – V (Answer ANY ONE)</div>
+              <div class="meta"></div>
+            </div>
+            <button class="toggle" data-target="u5">Toggle</button>
+          </div>
+          <div class="qtext" id="u5">
+            <strong>Q9 a)</strong> Explain JPEG compression with DCT, quantization, and entropy coding. <br>
+            <strong>b)</strong> Describe PNG compression and its advantages. 
+            <hr>
+            <strong>OR</strong>
+            <p style="margin-top:8px"><strong>Q10 a)</strong> Explain the role of morphological operations in shape analysis. <br>
+            <strong>b)</strong> Write short case studies on: Face recognition systems and Medical image analysis. </p>
+          </div>
+        </div>
+
+      </section>
+
+      <footer>
+        <div>Prepared by: Mentor AI</div>
+        <div>Generated: Nov 20, 2025</div>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    // Wait for DOM to be fully loaded before accessing elements
+    document.addEventListener('DOMContentLoaded', function () {
+      // safe DOM queries
+      function safeGet(id) {
+        return document.getElementById(id) || null;
+      }
+
+      function toggle(id){
+        const el = safeGet(id);
+        if(!el) return;
+        el.style.display = (el.style.display === 'none') ? 'block' : 'none';
+      }
+
+      // attach click handlers to each toggle button (using data-target)
+      const toggles = Array.from(document.querySelectorAll('.toggle'));
+      toggles.forEach(btn => {
+        const target = btn.getAttribute('data-target');
+        if(!target) return;
+        btn.addEventListener('click', function () { toggle(target); });
+      });
+
+      // ensure all units are expanded by default
+      ['u1','u2','u3','u4','u5'].forEach(id=>{
+        const el = safeGet(id);
+        if(el) el.style.display = 'block';
+      });
+
+      // toggle all button behaviour
+      const toggleAllBtn = safeGet('toggleAllBtn');
+      let collapsed = false;
+      if(toggleAllBtn){
+        toggleAllBtn.addEventListener('click', function(){
+          collapsed = !collapsed;
+          ['u1','u2','u3','u4','u5'].forEach(id=>{
+            const el = safeGet(id);
+            if(el) el.style.display = collapsed ? 'none' : 'block';
+          });
+          toggleAllBtn.textContent = collapsed ? 'Expand All' : 'Collapse All';
+        });
+      }
+
+    });
+  </script>
+</body>
+</html>
